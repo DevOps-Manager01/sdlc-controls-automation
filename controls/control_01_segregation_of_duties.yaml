@@ -1,0 +1,17 @@
+id: CTRL-01
+name: Segregation of Duties
+description: >
+  No pull request can be merged without an approving review from an
+  independent party. The PR author cannot approve or merge their own
+  change without a qualifying review from someone else (specifically,
+  from a designated CODEOWNER where required).
+framework_mapping:
+  soc2: CC8.1
+  iso27001: A.8.29
+  pci_dss: "6.3.2"
+  nist_800_53: CM-3
+evaluator: evaluate_segregation_of_duties
+evidence_sources:
+  - branch_protection.required_pull_request_reviews
+  - pull_requests[].reviews
+  - pull_requests[].author
