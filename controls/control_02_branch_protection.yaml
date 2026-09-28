@@ -1,0 +1,17 @@
+id: CTRL-02
+name: Change Control — No Direct Commits to Protected Branch
+description: >
+  All changes to the default branch must go through a pull request.
+  Direct pushes to the protected branch are disallowed, and force
+  pushes/deletions of the branch are blocked.
+framework_mapping:
+  soc2: CC8.1
+  iso27001: A.8.32
+  pci_dss: "6.5.1"
+  nist_800_53: CM-3
+evaluator: evaluate_branch_protection
+evidence_sources:
+  - branch_protection.required_pull_request_reviews
+  - branch_protection.allow_force_pushes
+  - branch_protection.allow_deletions
+  - branch_protection.enforce_admins
