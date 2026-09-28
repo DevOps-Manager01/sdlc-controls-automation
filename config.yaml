@@ -1,0 +1,16 @@
+# config.yaml
+# Add or remove repos here to change what the automation evaluates.
+# No code changes needed to add a new target (e.g. the Juice Shop fork later).
+
+org: grc-automation-lab
+
+repos:
+  - name: sdlc-demo-app
+    default_branch: main
+    codeowner_required: true
+
+  # Uncomment once the Juice Shop fork exists, to bring it into scope
+  # for Control #3 (security testing gate) evidence:
+  # - name: juice-shop
+  #   default_branch: main
+  #   codeowner_required: false
