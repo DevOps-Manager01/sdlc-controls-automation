@@ -1,0 +1,16 @@
+id: CTRL-04
+name: Change Traceability
+description: >
+  Every merged pull request must be linked to an approved work item
+  (a GitHub Issue), via a closing keyword (e.g. "Closes #12") in the
+  PR description. This ensures every production change can be traced
+  back to an authorized, documented reason for the change.
+framework_mapping:
+  soc2: CC8.1
+  iso27001: A.8.32
+  pci_dss: "6.5.1"
+  nist_800_53: CM-3
+evaluator: evaluate_traceability
+evidence_sources:
+  - pull_requests[].body
+  - pull_requests[].closing_issues
