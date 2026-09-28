@@ -1,0 +1,18 @@
+id: CTRL-05
+name: Access Review
+description: >
+  Repository collaborator access is reviewed periodically to confirm
+  that permission levels (Admin, Write, Triage, etc.) match each
+  person's actual role, and that no unnecessary elevated access
+  persists. This run's snapshot becomes the dated evidence artifact
+  for that period's review.
+framework_mapping:
+  soc2: CC6.1
+  iso27001: "A.5.18, A.8.2"
+  pci_dss: "7.2.1"
+  nist_800_53: AC-2
+evaluator: evaluate_access_review
+evidence_sources:
+  - collaborators[].login
+  - collaborators[].role_name
+  - collaborators[].permissions
