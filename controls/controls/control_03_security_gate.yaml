@@ -1,0 +1,17 @@
+id: CTRL-03
+name: Automated Security Testing Gate
+description: >
+  Every pull request must pass automated static analysis (SAST) and
+  dependency/software composition analysis (SCA) checks before it can
+  be merged. These checks are configured as required status checks in
+  branch protection, so a failing or missing scan blocks the merge.
+framework_mapping:
+  soc2: CC8.1
+  iso27001: A.8.28
+  pci_dss: "6.3.1, 6.3.3"
+  nist_800_53: SA-11
+evaluator: evaluate_security_gate
+evidence_sources:
+  - branch_protection.required_status_checks.contexts
+  - check_runs[].name
+  - check_runs[].conclusion
